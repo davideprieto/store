@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "393635f5-d664-4009-8e55-eef7460cc0a9",
+		"name": "Almacen Accenture",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cancelar pedido",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/store/api/v0/order?id=59160723-6867-49a9-855c-faeb2fee653a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"store",
+						"api",
+						"v0",
+						"order"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "59160723-6867-49a9-855c-faeb2fee653a"
+						}
+					]
+				},
+				"description": "Se cancela el pedido enviando el id del pedido."
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar pedido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"name\": \"Jabón nuevo hora\",\r\n            \"description\": \"Jabón de manos\",\r\n            \"price\": 15000,\r\n            \"amount\": 6\r\n        }\r\n    ],\r\n    \"id\": \"1c49a01b-4481-4bb8-8093-3b40f5b54203\",\r\n    \"totalPrice\": 89560.0,\r\n    \"dateOrder\": \"2021-04-22T09:39:31.283+00:00\",\r\n    \"idCustomer\": 12346,\r\n    \"address\": \"carrera 11 # 14-09\",\r\n    \"tax\": \"19%\",\r\n    \"deliveryCost\": 1500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/store/api/v0/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"store",
+						"api",
+						"v0",
+						"order"
+					]
+				},
+				"description": "Se realiza la actualización del pedido "
+			},
+			"response": []
+		},
+		{
+			"name": "Almacenar Ordenes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/store/api/v0/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"store",
+						"api",
+						"v0",
+						"order"
+					]
+				},
+				"description": "Se crean las ordenes"
+			},
+			"response": []
+		},
+		{
+			"name": "Crear pedido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n[\r\n    {\r\n        \"name\": \"Jabón\",\r\n        \"description\": \"Jabón de manos\",\r\n        \"price\": 5000,\r\n        \"amount\": 6\r\n    },\r\n    {\r\n        \"name\": \"crema\",\r\n        \"description\": \"crema de dientes\",\r\n        \"price\": 2000,\r\n        \"amount\": 10\r\n    },\r\n    {\r\n        \"name\": \"Shampoo\",\r\n        \"description\": \"Sahmpoo rizos\",\r\n        \"price\": 7000,\r\n        \"amount\": 1\r\n    },\r\n    {\r\n        \"name\": \"Cepillo\",\r\n        \"description\": \"Cepillo duro\",\r\n        \"price\": 1000,\r\n        \"amount\": 2\r\n    },\r\n    {\r\n        \"name\": \"Estropajo\",\r\n        \"description\": \"Estropajo natural\",\r\n        \"price\": 3000,\r\n        \"amount\": 5\r\n    }\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/store/api/v0/order?address=carrera 11 %23 14-09&idCustomer=12346",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"store",
+						"api",
+						"v0",
+						"order"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "carrera 11 %23 14-09"
+						},
+						{
+							"key": "idCustomer",
+							"value": "12346"
+						}
+					]
+				},
+				"description": "Se realiza la creación de los pedidos"
+			},
+			"response": []
+		},
+		{
+			"name": "Almacenar Productos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/store/api/v0/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"store",
+						"api",
+						"v0",
+						"products"
+					]
+				},
+				"description": "Se realiza el cargue de productos"
+			},
+			"response": []
+		}
+	]
+}
